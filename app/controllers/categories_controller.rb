@@ -8,4 +8,20 @@ class CategoriesController < ApplicationController
   def show; end
 
   def new; end
+
+  def create
+    @category = current_user.groups.build(category_params)
+    if @category.save
+      flash[:notice] = 'Category was successfully created.'
+      redirect_to categories_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def category_params
+    params.require(:category).permit(:name, :icon)
+  end
 end

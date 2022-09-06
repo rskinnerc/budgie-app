@@ -1,4 +1,12 @@
 <div>
+<%= link_to '<', categories_path%>
   <h1 class="font-bold text-4xl">NEW CATEGORY</h1>
-  <%= form_with url: categories_url, id: 'new_category_form' %>
+  <%= form_with url: categories_url, scope: :category, id: 'new_category_form' do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :icon %>
+    <%= f.text_field :icon %>
+    <%= f.submit 'Create Category' %>
+  <% end %>
 </div>
