@@ -40,7 +40,7 @@ RSpec.feature 'Categories', type: :feature do
     visit root_path
     click_link 'Add a new category'
     expect(page).to have_content('NEW CATEGORY')
-    expect(page).to have_selector('#new_group_form')
+    expect(page).to have_selector('#new_category_form')
   end
 
   scenario 'User visits categories page without logging in and is presented with the login page' do

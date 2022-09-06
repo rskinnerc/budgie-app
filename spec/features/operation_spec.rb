@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Operations', type: :feature do
   before :each do
-    @user = User.create(email: 'groups@email.com', password: 'password', name: 'Groups User')
+    @user = User.create(email: 'operations@email.com', password: 'password', name: 'Operations User')
     @user.confirm
     @category = Group.create(name: 'Test Category', icon: 'category.png', user: @user)
     @operation = Operation.create(amount: 100, name: 'Test Operation', group: @category, user: @user)
