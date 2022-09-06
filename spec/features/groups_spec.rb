@@ -17,7 +17,7 @@ RSpec.feature 'Categories', type: :feature do
     expect(page).to have_content('CATEGORIES')
   end
 
-  scenario 'User visits the home page and sees a list of categories with icon, name and total of all transactions' do
+  scenario 'User visits the home page and sees a list of categories with icon, name and total of all operations' do
     sign_in @user
     visit root_path
     expect(page).to have_content('CATEGORIES')
@@ -28,11 +28,11 @@ RSpec.feature 'Categories', type: :feature do
     expect(page).to have_content('$0.00')
   end
 
-  scenario 'User clicks on a category and is presented with the transactions page for that category' do
+  scenario 'User clicks on a category and is presented with the operations page for that category' do
     sign_in @user
     visit root_path
     click_link 'Test Category'
-    expect(page).to have_content('TRANSACTIONS')
+    expect(page).to have_content('OPERATIONS')
   end
 
   scenario 'User clicks on a "Add a new category" link and is presented with new category page' do
