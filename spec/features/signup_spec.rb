@@ -11,7 +11,7 @@ RSpec.feature 'Signups', type: :feature do
     fill_in 'password_confirmation', with: 'password'
     click_button 'Sign up'
 
-    expect(page).to have_content('You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address.')
+    expect(page).to have_content('You updated your account successfully, but we need to verify your new email address')
   end
 
   scenario 'User visits the signup page when already authenticated and gets redirected to the home page' do
