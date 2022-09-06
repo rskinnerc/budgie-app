@@ -5,13 +5,14 @@ RSpec.feature 'Signups', type: :feature do
     visit new_user_registration_path
     expect(page).to have_selector('#signup-form')
 
-    fill_in 'email', with: 'test_sign_up@email.com'
-    fill_in 'name', with: 'Test User'
-    fill_in 'password', with: 'password'
-    fill_in 'password_confirmation', with: 'password'
+    fill_in 'Email', with: 'test_sign_up@email.com'
+    fill_in 'Name', with: 'Test User'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
     click_button 'Sign up'
 
-    expect(page).to have_content('You updated your account successfully, but we need to verify your new email address')
+    expect(page).to have_content('A message with a confirmation link has been sent to your email address.')
+    expect(page).to have_current_path(new_user_session_path)
   end
 
   scenario 'User visits the signup page when already authenticated and gets redirected to the home page' do
