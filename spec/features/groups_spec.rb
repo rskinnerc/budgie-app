@@ -4,7 +4,7 @@ RSpec.feature 'Categories', type: :feature do
   before :each do
     @user = User.create(email: 'groups@email.com', password: 'password', name: 'Groups User')
     Group.create(name: 'Test Category', icon: 'category.png', user: @user)
-    Group.create(name: 'Test Category 2', icon: 'category2.png', user: @user)
+    Group.create(name: 'Category Test 2', icon: 'category2.png', user: @user)
     @user.confirm
   end
 
@@ -21,11 +21,11 @@ RSpec.feature 'Categories', type: :feature do
     sign_in @user
     visit root_path
     expect(page).to have_content('CATEGORIES')
-    expect(page).to have_content('Text Category')
-    expect(page).to have_content('Text Category 2')
+    expect(page).to have_content('Test Category')
+    expect(page).to have_content('Category Test 2')
     expect(page).to have_selector('img[src*="category.png"]')
     expect(page).to have_selector('img[src*="category2.png"]')
-    expect(page).to have_content('$0.00')
+    expect(page).to have_content('$0.0')
   end
 
   scenario 'User clicks on a category and is presented with the operations page for that category' do

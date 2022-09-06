@@ -1,5 +1,9 @@
 class CategoriesController < ApplicationController
-  def index; end
+  before_action :authenticate_user!
+
+  def index
+    @categories = current_user.groups
+  end
 
   def show; end
 
