@@ -1,0 +1,11 @@
+<div>
+  <h1 class="font-bold text-4xl">NEW OPERATION</h1>
+  <%= form_with url: category_operations_path(@category), scope: :operation, id: 'new_operation_form' do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+    <%= f.submit 'Create Operation' %>
+  <% end %>
+</div>

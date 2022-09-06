@@ -5,8 +5,10 @@ RSpec.feature 'Operations', type: :feature do
     @user = User.create(email: 'operations@email.com', password: 'password', name: 'Operations User')
     @user.confirm
     @category = Group.create(name: 'Test Category', icon: 'category.png', user: @user)
-    @operation = Operation.create(amount: 100, name: 'Test Operation', group: @category, user: @user)
-    @operation2 = Operation.create(amount: 200, name: 'Test Operation 2', group: @category, user: @user)
+    @operation = Operation.create(amount: 100, name: 'Test Operation', user: @user)
+    @operation2 = Operation.create(amount: 200, name: 'Test Operation 2', user: @user)
+    @category.operations << @operation
+    @category.operations << @operation2
   end
 
   scenario 'User visits a given category, the list of operations is presented, ordered by the most recent.' do
@@ -19,7 +21,7 @@ RSpec.feature 'Operations', type: :feature do
   scenario 'user visits a given category and could see the total amount for the category' do
     sign_in @user
     visit category_path(@category)
-    expect(page).to have_content('$300.00')
+    expect(page).to have_content('$300.0')
   end
 
   scenario 'a button "add a new operation" that brings the user to the page to create a new operation' do

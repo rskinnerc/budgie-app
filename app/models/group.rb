@@ -1,11 +1,10 @@
 class Group < ApplicationRecord
   belongs_to :user
-  has_many :operations
+  has_and_belongs_to_many :operations
 
   validates :name, :icon, presence: true
 
   def total
-    # TODO: Implement total for all transactions in this category
-    0.00
+    operations.sum(:amount)
   end
 end

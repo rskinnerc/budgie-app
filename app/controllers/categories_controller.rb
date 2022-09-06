@@ -5,7 +5,10 @@ class CategoriesController < ApplicationController
     @categories = current_user.groups
   end
 
-  def show; end
+  def show
+    @category = Group.find(params[:id])
+    @operations = @category.operations
+  end
 
   def new; end
 
