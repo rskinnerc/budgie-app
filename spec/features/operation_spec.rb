@@ -41,6 +41,6 @@ RSpec.feature 'Operations', type: :feature do
 
   scenario 'user visits a given category without authenticate and is presented with the login page' do
     visit category_path(@category)
-    expect(page).to have_content('Log in')
+    expect(page).to have_content('LOG IN')
   end
 end

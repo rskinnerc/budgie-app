@@ -52,6 +52,6 @@ RSpec.feature 'NewOperations', type: :feature do
 
   scenario 'user visits a new operation page without authenticate and is presented with the login page' do
     visit new_category_operation_path(@category)
-    expect(page).to have_content('Log in')
+    expect(page).to have_content('LOG IN')
   end
 end

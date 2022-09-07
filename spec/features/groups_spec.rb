@@ -45,6 +45,6 @@ RSpec.feature 'Categories', type: :feature do
 
   scenario 'User visits categories page without logging in and is presented with the login page' do
     visit root_path
-    expect(page).to have_content('Log in')
+    expect(page).to have_content('LOG IN')
   end
 end
