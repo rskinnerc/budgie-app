@@ -1,26 +1,25 @@
-<h2>Log in</h2>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: 'login-form' }) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="flex flex-grow px-2 py-3 h-16 items-center from-main-500 to-main-700 bg-gradient-to-br text-font-100">
+    <%= link_to welcome_path, class: 'w-2/12 text-xl' do %>
+      <i class="fa-solid fa-arrow-left"></i>
+    <% end %>
+    <span class="w-8/12 text-center font-semibold">LOGIN</span>
+    <button class="w-2/12">Log in</button>
   </div>
+  <div class="flex flex-col mt-6">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email' %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password' %>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <% if devise_mapping.rememberable? %>
+      <div class="flex p-3 items-center gap-3 text-font-500">
+        <%= f.check_box :remember_me, class: 'rounded' %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="text-center mt-10 text-font-300">
+  <%= render "devise/shared/links" %>
+</div>

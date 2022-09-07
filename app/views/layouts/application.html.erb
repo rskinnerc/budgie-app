@@ -10,10 +10,11 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'https://kit.fontawesome.com/66efa54545.js' %>
   </head>
 
   <body>
-    <main class="">
+    <main class="bg-font-50 min-h-screen font-proxima">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
