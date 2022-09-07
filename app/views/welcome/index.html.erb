@@ -1,5 +1,7 @@
-<div>
+<div class="flex flex-col items-center mt-52">
   <%= image_tag 'budgie-logo.png', id: 'logo' %>
-  <%= link_to 'LOG IN', new_user_session_path, id: 'login-link' %>
-  <%= link_to 'SIGN UP', new_user_registration_path, id: 'signup-link' %>
+  <div class="mt-32 flex flex-col self-stretch items-center">
+    <%= link_to 'LOG IN', new_user_session_path, id: 'login-link', class: 'px-3 py-2 bg-main-500 w-10/12 text-font-100 font-semibold text-center' %>
+    <%= link_to 'SIGN UP', new_user_registration_path, id: 'signup-link', class: 'px-3 py-2 text-font-500 w-10/12 font-semibold text-center' %>
+  </div>
 </div>
