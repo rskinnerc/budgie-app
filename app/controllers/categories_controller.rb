@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Group.find(params[:id])
+    @category = current_user.groups.find(params[:id])
     @operations = @category.operations
   end
 
