@@ -1,17 +1,27 @@
-<div>
-  <%= link_to '<', category_path(@category) %>
-  <h1 class="font-bold text-4xl">NEW OPERATION</h1>
-  <%= form_with url: category_operations_path(@category), scope: :operation, id: 'new_operation_form' do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= f.label :amount %>
-    <%= f.number_field :amount %>
-
-    <h2>Categories</h2>
-    <%= f.collection_check_boxes :groups, @groups, :id, :name, include_hidden: false do |b| %>
-      <%= b.label { b.check_box(:"checked" => b.value == @category.id, :"value" => b.value) + ' ' + b.text } %>
-    <% end %>
-    <%= f.submit 'Create Operation' %>
+<div class="flex flex-grow px-2 py-3 h-16 items-center from-main-500 to-main-700 bg-gradient-to-br text-font-100">
+  <%= link_to category_path(@category), class: 'w-2/12 text-xl', title: '<' do %>
+    <i class="fa-solid fa-arrow-left"></i>
   <% end %>
+  <span class="w-8/12 text-center font-semibold">NEW OPERATION</span>
 </div>
+<%= render "devise/shared/error_messages", resource: @operation %>
+
+<%= form_with url: category_operations_path(@category), scope: :operation, id: 'new_operation_form', class: 'flex flex-col mt-6' do |f| %>
+  <%= f.text_field :name, placeholder: 'Name' %>
+
+  <%= f.number_field :amount, placeholder: 'Amount' %>
+
+  <h2 class="p-3 text-font-500 font-semibold">Categories (select at least one)</h2>
+  <ul class="px-3" data-controller="uncheckable">
+    <%= f.collection_check_boxes :groups, @groups, :id, :name, include_hidden: false do |b| %>
+      <% if b.value == @category.id %>
+        <li><%= b.label { b.check_box(:"checked" => true, :"value" => b.value,  :"data-uncheckable-target" => 'mandatory-category', :"data-action" => 'click->uncheckable#prevent') + ' ' + b.text } %></li>
+      <% else %>
+        <li><%= b.label { b.check_box(:"value" => b.value) + ' ' + b.text } %></li>
+      <% end %>
+    <% end %>
+  </ul>
+  
+  <%= f.submit 'Create Operation', class: 'px-3 py-2 mt-3 bg-main-500 w-10/12 text-font-100 font-semibold self-center' %>
+<% end %>
+

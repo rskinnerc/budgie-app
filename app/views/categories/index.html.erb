@@ -5,10 +5,10 @@
     <i class="fa-solid fa-plus"></i>
   <% end %>
 </div>
-<ul class="mb-16">
+<ul class="pb-16">
     <%= render partial: 'category', collection: @categories %>
 </ul>
-<%= link_to new_category_path, class: 'w-full bg-secondary-500 text-font-50 block h-16 flex items-center justify-center p-3 text-lg absolute bottom-0' do %>
+<%= link_to new_category_path, class: 'w-full bg-secondary-500 text-font-50 block h-16 flex items-center justify-center p-3 text-lg fixed bottom-0' do %>
    <span class="border border-font-20 w-full h-full flex items-center justify-center">Add a new category</span>
 <% end %>
 
