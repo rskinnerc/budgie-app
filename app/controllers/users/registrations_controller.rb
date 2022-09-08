@@ -8,9 +8,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super do |resource|
+      if resource.errors.any?
+        respond_to do
+          render 'devise/registrations/new', locals: { resource: }, status: :unprocessable_entity
+          return
+        end
+      end
+    end
+  end
 
   # GET /resource/edit
   # def edit
