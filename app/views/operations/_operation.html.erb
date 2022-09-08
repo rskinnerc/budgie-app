@@ -1,0 +1,9 @@
+<li class="m-3 bg-white p-3 shadow-sm flex">
+    <div class="w-8/12 p-2 text-font-300 font-semibold flex flex-col justify-between">
+      <span><%= operation.name %></span>
+      <span class="text-sm text-font-200 font-normal"><%= operation.created_at.to_fs(:short) %></span>
+    </div>
+    <div class="w-4/12 font-semibold text-font-500 pt-3 text-right">
+      $<%= operation.amount %>
+    </div>
+</li>

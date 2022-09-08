@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = current_user.groups.find(params[:id])
-    @operations = @category.operations
+    @operations = @category.operations.order('created_at DESC')
   end
 
   def new; end
