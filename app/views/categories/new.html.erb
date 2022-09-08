@@ -1,12 +1,15 @@
-<div>
-<%= link_to '<', categories_path%>
-  <h1 class="font-bold text-4xl">NEW CATEGORY</h1>
-  <%= form_with url: categories_url, scope: :category, id: 'new_category_form' do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= f.label :icon %>
-    <%= f.text_field :icon %>
-    <%= f.submit 'Create Category' %>
+<div class="flex flex-grow px-2 py-3 h-16 items-center from-main-500 to-main-700 bg-gradient-to-br text-font-100">
+  <%= link_to root_path, class: 'w-2/12 text-xl', title: '<' do %>
+    <i class="fa-solid fa-arrow-left"></i>
   <% end %>
+  <span class="w-8/12 text-center font-semibold">NEW CATEGORY</span>
 </div>
+<%= render "devise/shared/error_messages", resource: @category %>
+
+<%= form_with url: categories_url, scope: :category, id: 'new_category_form', class: 'flex flex-col mt-6' do |f| %>
+  <%= f.text_field :name, placeholder: 'Name' %>
+
+  <%= f.text_field :icon, placeholder: 'Icon' %>
+  <span class="text-font-300 text-sm p-3">NOTE: The icon field must be a valid image URL (preferable 100x100 px)</span>
+  <%= f.submit 'Create Category', class: 'px-3 py-2 mt-3 bg-main-500 w-10/12 text-font-100 font-semibold self-center' %>
+<% end %>

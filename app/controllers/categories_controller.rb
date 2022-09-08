@@ -10,7 +10,9 @@ class CategoriesController < ApplicationController
     @operations = @category.operations.order('created_at DESC')
   end
 
-  def new; end
+  def new
+    @category = Group.new
+  end
 
   def create
     @category = current_user.groups.build(category_params)
@@ -18,7 +20,7 @@ class CategoriesController < ApplicationController
       flash[:notice] = 'Category was successfully created.'
       redirect_to categories_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
