@@ -1,4 +1,4 @@
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: 'login-form' }) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: 'login-form' }, data: { turbo: false }) do |f| %>
   <div class="flex flex-grow px-2 py-3 h-16 items-center from-main-500 to-main-700 bg-gradient-to-br text-font-100">
     <%= link_to welcome_path, class: 'w-2/12 text-xl' do %>
       <i class="fa-solid fa-arrow-left"></i>

@@ -19,6 +19,6 @@
 
 @layer base {
   input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="url"], textarea, select {
-    @apply border border-font-100 focus:outline-none focus:border-font-200 focus:ring-0 placeholder:text-font-300;
+    @apply border border-font-100 focus:outline-none focus:border-font-200 focus:ring-0 placeholder:text-font-300 py-3;
   }
 }
