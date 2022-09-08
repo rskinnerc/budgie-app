@@ -1,0 +1,12 @@
+<li class="m-3 bg-white p-3 shadow-sm">
+  <%= link_to category_path(category), class: 'flex' do %>
+    <img src="<%= category.icon %>" class="w-2/12">
+    <div class="w-7/12 p-2 text-font-300 font-semibold flex flex-col justify-between">
+      <span><%= category.name %></span>
+      <span class="text-sm text-font-200 font-normal"><%= category.created_at.to_fs(:short) %></span>
+    </div>
+    <div class="w-3/12 font-semibold text-font-500 pt-3 text-right">
+      $<%= category.total %>
+    </div>
+  <% end %>
+</li>
