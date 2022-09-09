@@ -1,8 +1,8 @@
 <div class="flex flex-grow px-2 py-3 h-16 items-center from-main-500 to-main-700 bg-gradient-to-br text-font-100">
   <i class="fa-solid fa-bars w-2/12 text-xl"></i>
   <span class="w-8/12 text-center font-semibold">CATEGORIES</span>
-  <%= link_to new_category_path, class: 'w-2/12 text-right' do %>
-    <i class="fa-solid fa-plus"></i>
+  <%= button_to destroy_user_session_path, form_class: 'w-2/12 text-right', title: 'logout', method: 'delete' do %>
+    <i class="fa-solid fa-power-off text-red-500"></i>
   <% end %>
 </div>
 <ul class="pb-16">
