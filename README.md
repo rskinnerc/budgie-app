@@ -1,56 +1,51 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Budgie App
 
-> Description the project.
+> A mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby on Rails
+- TailwindCSS
+- Hotwire Turbo & Stimulus
+- RSpec
+- Capybara
+- PostgreSQL
+- Devise
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Budgie Live Demo](https://budgie.fly.dev/)
 
 
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+- Ruby
+- PostgreSQL user with enough permissions for managing databases
 
 ### Setup
-
+- Clone this repository in your local machine by using `git clone git@github.com:rskinnerc/budgie-app.git`
+- Update `config/database.yml` file in order to set a working user/password postgresql account
 ### Install
+- `cd budgie-app`
+- Install the dependencies with `bundle install`
+- Run the Tailwind CSS builder with `rails tailwindcss:build`
 
 ### Usage
+- Run the app with `rails server`
+- In your browser had to [http://localhost:3000](http://localhost:3000)
 
-### Run tests
-
-### Deployment
-
-
-
+### Testing
+- Run the tests with `rspec`
 ## Authors
 
-👤 **Author1**
+👤 **Ronald Skinner**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@rskinnerc](https://github.com/rskinnerc)
+- Twitter: [@XSkinner](https://twitter.com/XSkinner)
+- LinkedIn: [Ronald Skinner Cardenas](https://www.linkedin.com/in/rskinnerc/)
 
 ## 🤝 Contributing
 
@@ -66,10 +61,9 @@ Give a ⭐️ if you like this project!
 
 - Hat tip to anyone whose code was used
 - Inspiration
-- etc
+- Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
+
 
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
