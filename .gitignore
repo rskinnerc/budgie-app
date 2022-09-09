@@ -31,3 +31,5 @@
 /config/master.key
 .vscode
 node_modules
+/app/assets/builds/*
+!/app/assets/builds/.keep

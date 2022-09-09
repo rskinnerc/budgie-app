@@ -1,0 +1,17 @@
+<div class="flex flex-grow px-2 py-3 h-16 items-center from-main-500 to-main-700 bg-gradient-to-br text-font-100">
+  <%= link_to root_path, class: 'w-2/12 text-xl', title: '<' do %>
+    <i class="fa-solid fa-arrow-left"></i>
+  <% end %>
+  <span class="w-8/12 text-center font-semibold">OPERATIONS (<%= @category.name %>)</span>
+  <%= link_to new_category_operation_path(@category), class: 'w-2/12 text-right' do %>
+    <i class="fa-solid fa-plus"></i>
+  <% end %>
+</div>
+<div class="bg-white shadow-sm h-16 flex items-center px-3 justify-between text-font-300"><span>Total Spent</span> <span class="text-font-500 font-semibold">$<%= @category.total %></span></div>
+<ul class="pb-16">
+  <%= render partial: 'operations/operation', collection: @operations %>
+</ul>
+
+<%= link_to new_category_operation_path(@category), class: 'w-full bg-secondary-500 text-font-50 block h-16 flex items-center justify-center p-3 text-lg fixed bottom-0' do %>
+   <span class="border border-font-20 w-full h-full flex items-center justify-center">Add a new operation</span>
+<% end %>

@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BudgieApp</title>
+    <title>Budgie App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'https://kit.fontawesome.com/66efa54545.js' %>
   </head>
 
   <body>
-    <%= yield %>
+    <main class="bg-font-50 min-h-screen font-proxima" data-controller="notify" data-notify-alert-message-value="<%= alert %>" data-notify-notice-message-value="<%= notice %>">
+      <p class="notice  absolute z-50 w-11/12 bg-green-600/90 border-green-700 border hidden text-font-50 rounded p-2 mt-2 left-1/2 transform -translate-x-1/2" data-notify-target="noticeMessage" ><%= notice %></p>
+      <p class="alert absolute z-50 w-11/12 bg-red-500/90 border-red-600 border hidden text-font-50 rounded p-2 mt-2 left-1/2 transform -translate-x-1/2" data-notify-target="alertMessage"><%= alert %></p>
+      <%= yield %>
+    </main>
   </body>
 </html>

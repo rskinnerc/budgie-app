@@ -1,0 +1,14 @@
+<div class="flex flex-grow px-2 py-3 h-16 items-center from-main-500 to-main-700 bg-gradient-to-br text-font-100">
+  <i class="fa-solid fa-bars w-2/12 text-xl"></i>
+  <span class="w-8/12 text-center font-semibold">CATEGORIES</span>
+  <%= button_to destroy_user_session_path, form_class: 'w-2/12 text-right', title: 'logout', method: 'delete' do %>
+    <i class="fa-solid fa-power-off text-red-500"></i>
+  <% end %>
+</div>
+<ul class="pb-16">
+    <%= render partial: 'category', collection: @categories %>
+</ul>
+<%= link_to new_category_path, class: 'w-full bg-secondary-500 text-font-50 block h-16 flex items-center justify-center p-3 text-lg fixed bottom-0' do %>
+   <span class="border border-font-20 w-full h-full flex items-center justify-center">Add a new category</span>
+<% end %>
+
