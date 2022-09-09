@@ -4,6 +4,9 @@
 
 > A mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
+![budgie-splash](https://user-images.githubusercontent.com/26911718/189438248-8080e4d7-2002-4595-906b-2aa26cabb788.png)
+![budgie-home](https://user-images.githubusercontent.com/26911718/189438259-37d6d357-8eed-483d-a698-0548bc0dadf1.png)
+![budgie-operatinons](https://user-images.githubusercontent.com/26911718/189438268-044f831d-fc07-47b0-be8c-aaddf6ef91af.png)
 
 ## Built With
 
