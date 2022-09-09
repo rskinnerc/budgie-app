@@ -14,9 +14,9 @@
   </head>
 
   <body>
-    <main class="bg-font-50 min-h-screen font-proxima">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <main class="bg-font-50 min-h-screen font-proxima" data-controller="notify" data-notify-alert-message-value="<%= alert %>" data-notify-notice-message-value="<%= notice %>">
+      <p class="notice  absolute z-50 w-11/12 bg-green-600/90 border-green-700 border hidden text-font-50 rounded p-2 mt-2 left-1/2 transform -translate-x-1/2" data-notify-target="noticeMessage" ><%= notice %></p>
+      <p class="alert absolute z-50 w-11/12 bg-red-500/90 border-red-600 border hidden text-font-50 rounded p-2 mt-2 left-1/2 transform -translate-x-1/2" data-notify-target="alertMessage"><%= alert %></p>
       <%= yield %>
     </main>
   </body>

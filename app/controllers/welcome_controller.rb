@@ -6,6 +6,9 @@ class WelcomeController < ApplicationController
   private
 
   def check_auth
-    redirect_to root_path if user_signed_in?
+    return unless user_signed_in?
+
+    flash[:notice] = 'You are already signed in.'
+    redirect_to root_path
   end
 end
